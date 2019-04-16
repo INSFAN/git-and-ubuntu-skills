@@ -1,0 +1,49 @@
+创建版本库
+mkdir insfan-git                      创建git版本库目录
+git init                              把这个目录变成Git可以管理的仓库
+git add readme.txt                    把文件添加到仓库，把文件修改添加到暂存区
+git commit -m "wrote a readme file"   把文件提交到仓库,把暂存区的所有内容提交到当前分支-m后面输入的是本次提交的说明
+
+**********************************************************************************
+版本回退
+git status                            可以让我们时刻掌握仓库当前的状态
+git diff readme.txt                   查看修改的内容,工作区和版本库的差别
+git log                               查看从最近到最远的提交日志信息
+git log --pretty=oneline              简版的提交日志信息
+git reset --hard HEAD^                回退到上一个版本，HEAD表示当前版本，HEAD^表示上一个版本，HEAD^^表示上上一个版本
+git reset --hard commit_id            回退到指定的commit_id版本
+git reflogb                           记录你的每一次命令
+
+************************************************************************************
+工作区和暂存区
+工作区（working directory):          在自己电脑里面能看到的目录，比如insfan-git文件夹就是一个工作区。
+版本库（Repository）:                .git
+暂存区（stage）:                     把文件修改添加到暂存区，版本库中git add 命令后文件保存的位置。
+master分支：                         把暂存区的所有内容提交到当前分支，版本库中git commit命令后文件保存的位置，指针HEAD来指向不同的版本
+git checkout -- readme.txt            把readme.txt文件在工作区的修改全部撤销,总之，就是让这个文件回到最近一次git commit或git add时的状态
+git reset HEAD readme.txt             把暂存区的修改退回到工作区
+git rm test.txt                       从版本库中删除test.txt
+git checkout --test.txt               从版本库中恢复test.txt到工作区
+
+*************************************************************************************
+远程仓库
+git remote add origin https://github.com/INSFAN/insfan-git.git   本地仓库与github中的insfan-git仓库关联
+git push -u origin master                   把本地仓库的内容推送到GitHub仓库，由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以不使用-u
+git clone git@github.com:INSFAN/git-skills.git   克隆一个本地库
+Git支持多种协议，包括https，但通过ssh支持的原生git协议速度最快
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
