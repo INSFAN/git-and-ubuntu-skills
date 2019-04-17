@@ -95,28 +95,3 @@ Linux文件系统中，有所谓的链接(link)，我们可以将其视为档案
 ln -s days my_days               建立连接命令，类似于指针，就是让my_days指向days,我们访问my_days就相当于访问days一样.（带有-s的符号链接被称为软连接，不带-s的链接被称为硬链接）
 ln -s /home/etc local            建立连接命令还可以应用于目录，该实例表示建立一个指向/home/etc目录的链接local
 ln days my_days                  硬链接和软连接功能相同，但是不常用。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
